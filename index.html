@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>View Components</title>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<!-- Foundation CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css">
+	
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+
+	 <div class="row">
+	 	<h1 class="columns small-12"> Vue Components &amp; Lightning Keys </h1>
+	 	<div class="columns small-12">
+	 		<div class="columns small-8 small-offset-2 container">
+	 			<p>In this project, we are going to create a typing tool that tells us the number of words we can type in one minute. After calculating this speed, we will get an average rating based on a cheat sheet. This rating can then be used to apply for a job
+	 			at a company that people often sit down for long hours and just type.</p>
+
+	 			<p class="text-center">We recommend that you first <a href="#learn-vue">learn a few things about Vue js</a> or for the impatient you can choose to simply </p>
+	 			<div class="button-go columns small-12">
+	 				<a class="button small" href="">Go straight to the lightning keys project</a>
+	 			</div>
+				
+
+	 			<div id="learn-vue" class="columns small-12">
+	 				<section id="basic-usage">
+	 					<h2>1.0 Components Introduction</h2>
+						<div class="columns small-6">
+							<h4>This list comes from a component</h4>
+							<ct-interns></ct-interns>
+						</div>
+
+						<div class="columns small-6">
+							<h4>Delavu! This is the same component</h4>
+							<ct-interns></ct-interns>
+						</div>
+						
+	 				</section>
+	 			</div>
+	 		</div>
+	 		
+
+	 	</div>
+	 </div>
+
+</div>
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<!-- Foundation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js"></script>	
+
+<!-- Vue -->
+<script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+
+<script>
+Vue.component('ct-interns', {
+	template: '<div><p class="para" v-for="intern in interns">{{ intern.username }}</p></div>',
+	data: function(){
+		return {
+			interns: [
+				{ username: "Francis Kisiara"},
+				{ username: "Kelvin Maina"},
+				{ username: "Brian Kariuki"},
+				{ username: "Godfrey Jalas"},
+				{ username: "Erick Ya'kov"},
+				{ username: "Duncan Kinuthia"}	
+			]
+		};
+	}
+});
+
+
+new Vue({
+	el: '#app',
+	data: {
+		greeting: "Ohio",
+		
+	}
+});
+</script>
+
+</body>
+</html>
